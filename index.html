@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAW</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- TOOL DISPLAY -->
+        <section class="tool-display">
+            <div class="row">
+                <label for="shape-options" class="title">Shapes</label>
+                    <ul class="options" id="shape-options">
+                        
+                        <li class="option">
+                            <span><i class="fa-regular fa-square-full fa-sm"></i>&nbsp Rectangle</span>
+                        </li>
+
+                        <li class="option">
+                            <span><i class="fa-regular fa-circle fa-sm"></i>&nbsp Circle</span>
+                        </li>
+
+                        <label class="toggle" for="fill-color"> Fill Color
+                            <input type="checkbox" id="fill-color">
+                            <span class="slider"></span>
+                        </label>
+                    </ul>
+            </div>
+
+            <div class="row">
+                <label for="tool-options" class="title">Options</label>
+                    <ul class="options" id="tool-options">
+                        
+                        <li class="option">
+                            <span><i class="fa-solid fa-brush fa-sm"></i>&nbsp Brush</span>
+                        </li>
+
+                        <li class="option">
+                            <span><i class="fa-solid fa-eraser fa-sm"></i>&nbsp Eraser</span>
+                        </li>
+                            
+                        <li>
+                            <label class="option">
+                                <input type="range" id="size-slider">
+                            </label>
+                        </li>
+                        
+                    </ul>
+            </div>
+
+            <div class="row">
+                <label for="paint-options" class="title">Colors</label>
+                    <ul class="options" id="paint-options">
+                        <li class="options"></li>
+                        <li class="options"></li>
+                        <li class="options"></li>
+                        <li class="options"></li>
+                        <li class="options"></li>
+                    </ul>
+            </div>
+
+            <div class="row">
+                    <button class="clear canvas"><i class="fa-solid fa-xmark fa-sm"></i> &nbsp Clear</button>
+                    <button class="save-img"><i class="fa-regular fa-floppy-disk fa-sm"></i> &nbsp Save</button>
+            </div>
+            
+        </section>
+
+        <!-- DRAWING AREA -->
+        <section class="drawing-area">
+
+        </section>
+    </div>
+</body>
+</html>
