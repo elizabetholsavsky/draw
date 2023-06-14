@@ -2,7 +2,9 @@ const canvas = document.querySelector("canvas"),
 toolBtns = document.querySelectorAll(".tool"),
 ctx = canvas.getContext("2d");
 
-let isDrawing = false,
+let prevMouseX, prevMouseY,
+isDrawing = false,
+selectedTool = "brush",
 brushWidth = 5;
 
 window.addEventListener("load", () => {
@@ -11,21 +13,36 @@ window.addEventListener("load", () => {
     canvas.height = canvas.offsetHeight;
 })
 
-const startDraw = () => {
+const drawRect = (e) => {
+    ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
+}
+
+
+const startDraw = (e) => {
     isDrawing = true;
     ctx.beginPath(); // begin new path when picking up brush 
+    prevMouseX = e.offsetX;
+    prevMouseY = e.offsetY;
     ctx.lineWidth = brushWidth;
 }
+
 const drawing = (e) => {
     if(!isDrawing) return;
-    ctx.lineTo(e.offsetX, e.offsetY);  // create line with pointer
-    ctx.stroke();  // fill line with color
+
+    if(selectedTool === "brush") {
+        ctx.lineTo(e.offsetX, e.offsetY);  // create line with pointer
+        ctx.stroke();  // fill line with color
+    } else if (selectedTool === "rectangle") {
+        drawRect(e);
+    }
+    
 }
 
 toolBtns.forEach(btn =>{
     btn.addEventListener("click", () => {
         document.querySelector(".options .active").classList.remove("active");
         btn.classList.add("active");
+        selectedTool = btn.id;
         console.log(btn.id);
     })
 })
