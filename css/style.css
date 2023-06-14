@@ -97,6 +97,18 @@ section {
     margin: 2px;
 }
 
+.option #color-picker{
+    opacity: 0;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    appearance: none;
+    outline: none;
+}
+
 .colors .option:nth-child(1) {
     background-color: red;
 }
