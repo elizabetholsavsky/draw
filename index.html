@@ -50,21 +50,28 @@
             </div>
             
             <label class="option">
-                <input type="range" id="size-slider">
+                <input type="range" id="size-slider" min="1" max="30" value="5">
             </label>
             
             <div class="colors ">
                 <ul class="options" id="paint-options">                    
+                    <li class="option selected"></li>
                     <li class="option"></li>
                     <li class="option"></li>
                     <li class="option"></li>
                     <li class="option"></li>
                     <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option">
+                        <input type="color" id="color-picker" value="#FFFFFF">
+                    </li>
                 </ul>
             </div>
 
             <div class="row">
-                    <button class="clear canvas"><i class="fa-solid fa-xmark fa-sm"></i> &nbsp Clear</button>
+                    <button class="clear-canvas"><i class="fa-solid fa-xmark fa-sm"></i> &nbsp Clear</button>
                     <button class="save-img"><i class="fa-regular fa-floppy-disk fa-sm"></i> &nbsp Save</button>
             </div>
             
