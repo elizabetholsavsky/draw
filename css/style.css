@@ -57,9 +57,8 @@ section {
     margin-bottom: 10px;
 }
 
-.option :where(span, label) {
-    color: grey;
-    padding-left: 10px;
+.option:is(:hover, .active) :where(span, label){
+    color: var(--highlight);
 }
 
 .toggle :where(span, label) {
@@ -71,6 +70,7 @@ section {
     color: var(--highlight);
     cursor: pointer;
 }
+
 
 .title {
     display: block;
