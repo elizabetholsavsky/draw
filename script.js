@@ -8,7 +8,8 @@ ctx = canvas.getContext("2d");
 let prevMouseX, prevMouseY, snapshot,
 isDrawing = false,
 selectedTool = "brush",
-brushWidth = 5;
+brushWidth = 5,
+selectedColor = '#000';
 
 window.addEventListener("load", () => {
     // return viewable w and h off el
@@ -55,6 +56,8 @@ const startDraw = (e) => {
     prevMouseY = e.offsetY;
     ctx.beginPath(); // begin new path when picking up brush 
     ctx.lineWidth = brushWidth;
+    ctx.strokeStyle = selectedColor;
+    ctx.fillStyle = selectedColor;
     ctx.canvas.mozOpaque = true; // Add this line for Firefox compatibility
     ctx.willReadFrequently = true; // Set willReadFrequently attribute to improve performance
     snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -91,7 +94,7 @@ colorBtns.forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelector(".options .selected").classList.remove("selected");
         btn.classList.add("selected");
-        console.log(window.getComputedStyle(btn).getPropertyValue("background-color"));
+        selectedColor = window.getComputedStyle(btn).getPropertyValue("background-color");
     })
 })
 
