@@ -30,6 +30,22 @@ const drawCircle = (e) => {
     fillColor.checked ? ctx.fill() : ctx.stroke();
 };
 
+const drawTriangle = (e) => {
+    ctx.beginPath();
+    ctx.moveTo(prevMouseX, prevMouseY); // move triangle closer to pointer
+    ctx.lineTo(e.offsetX, e.offsetY); // first line
+    ctx.lineTo(prevMouseX * 2 - e.offsetX, e.offsetY); // second (bottom) line
+    ctx.closePath(); // third line (close path between line 1 and 2)
+    fillColor.checked ? ctx.fill() : ctx.stroke();
+};
+
+// creates a straight line!
+// const drawTriangle = (e) => {
+//     ctx.beginPath();
+//     ctx.moveTo(prevMouseX, prevMouseY); // move triangle closer to pointer
+//     ctx.lineTo(e.offsetX, e.offsetY); // first line
+//     ctx.stroke();
+// };
 
 const startDraw = (e) => {
     isDrawing = true;
@@ -53,8 +69,9 @@ const drawing = (e) => {
         drawRect(e);
     } else if (selectedTool === "circle") {
         drawCircle(e);
+    }  else if (selectedTool === "triangle") {
+        drawTriangle(e);
     }
-    
 };
 
 toolBtns.forEach(btn =>{
