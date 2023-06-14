@@ -12,14 +12,22 @@ window.addEventListener("load", () => {
     // return viewable w and h off el
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
-})
+});
 
 const drawRect = (e) => {
     if (!fillColor.checked) {
         return ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
     }
     ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
-}
+};
+
+const drawCircle = (e) => {
+    ctx.beginPath();
+    // get radius fo circle using pointer (sqrt = square root, pow method returns value of 'x' to power of 'y')
+    let radius = Math.sqrt(Math.pow((prevMouseX - e.offsetX), 2) + Math.pow((prevMouseY - e.offsetY), 2))
+    ctx.arc(prevMouseX, prevMouseY, radius, 50, 0, 2 * Math.PI);
+    ctx.stroke();
+};
 
 
 const startDraw = (e) => {
@@ -31,7 +39,7 @@ const startDraw = (e) => {
     ctx.canvas.mozOpaque = true; // Add this line for Firefox compatibility
     ctx.willReadFrequently = true; // Set willReadFrequently attribute to improve performance
     snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
-}
+};
 
 const drawing = (e) => {
     if(!isDrawing) return;
@@ -41,11 +49,12 @@ const drawing = (e) => {
         ctx.lineTo(e.offsetX, e.offsetY);  // create line with pointer
         ctx.stroke();  // fill line with color
     } else if (selectedTool === "rectangle") {
-        ctx.putImageData(snapshot, 0, 0);
         drawRect(e);
+    } else if (selectedTool === "circle") {
+        drawCircle(e);
     }
     
-}
+};
 
 toolBtns.forEach(btn =>{
     btn.addEventListener("click", () => {
@@ -54,7 +63,8 @@ toolBtns.forEach(btn =>{
         selectedTool = btn.id;
         console.log(btn.id);
     })
-})
+});
+
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", () => isDrawing = false);
