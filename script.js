@@ -52,13 +52,13 @@ const drawTriangle = (e) => {
     fillColor.checked ? ctx.fill() : ctx.stroke();
 };
 
-// creates a straight line!
-// const drawTriangle = (e) => {
-//     ctx.beginPath();
-//     ctx.moveTo(prevMouseX, prevMouseY); // move triangle closer to pointer
-//     ctx.lineTo(e.offsetX, e.offsetY); // first line
-//     ctx.stroke();
-// };
+// NEW creates a straight line!
+const drawLine = (e) => {
+    ctx.beginPath();
+    ctx.moveTo(prevMouseX, prevMouseY); // move line closer to pointer
+    ctx.lineTo(e.offsetX, e.offsetY); // first line
+    ctx.stroke();
+};
 
 const startDraw = (e) => {
     isDrawing = true;
@@ -87,6 +87,8 @@ const drawing = (e) => {
         drawCircle(e);
     }  else if (selectedTool === "triangle") {
         drawTriangle(e);
+    }  else if (selectedTool === "line") {
+        drawLine(e);
     }
 };
 

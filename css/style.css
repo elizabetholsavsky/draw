@@ -14,15 +14,30 @@
     --light-gray: #c0c0c0;
 }
 
+.drawma {
+    max-width: 50%;
+    height: auto;
+    text-align: center;
+    margin: auto;
+}
+
+
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background-color: var(--dark-gray);
+    flex-direction: column;
 }
 
+header {
+    display: block;
+    align-items: center;
+} 
+
 .container {
+    flex-direction: row;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -44,7 +59,7 @@ section {
 }
 
 .tool-display .row {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .row .options {
