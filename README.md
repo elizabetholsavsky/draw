@@ -7,6 +7,8 @@
   ![CSS3 Badge](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat)
   ![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat)
   
+  [https://elizabetholsavsky.github.io/drawma/](https://elizabetholsavsky.github.io/drawma/)
+  
 </div>
 
 ## Table of Contents
@@ -19,7 +21,11 @@
 ## Usage
 
 ## License
+[MIT License](https://opensource.org/licenses/MIT)
 
 ## Contributing
+[Drawing App in JavaScript video](https://www.youtube.com/watch?v=y84tBZo8GFo) by [Coding Nepal](https://github.com/codingnepal)
 
 ## Questions
+* Github [elizabetholsavsky](https://github.com/elizabetholsavsky)
+* Email elizabetholsavsky@gmail.com
