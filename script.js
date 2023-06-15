@@ -62,36 +62,21 @@ const drawLine = (e) => {
 
 const startDraw = (e) => {
     isDrawing = true;
-    if (e.type === "mousedown") {
-        prevMouseX = e.offsetX;
-        prevMouseY = e.offsetY;
-        ctx.beginPath(); // begin new path when picking up brush 
-        ctx.lineWidth = brushWidth;
-        ctx.strokeStyle = selectedColor;
-        ctx.fillStyle = selectedColor;
-        ctx.canvas.mozOpaque = true; // Add this line for Firefox compatibility
-        ctx.willReadFrequently = true; // Set willReadFrequently attribute to improve performance
-        snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    } else if (e.type === "touchstart") {
-        const touch = e.touches[0];
-        prevMouseX = touch.clientX - canvas.offsetLeft;
-        prevMouseY = touch.clientY - canvas.offsetTop;
-    }
+    prevMouseX = e.offsetX;
+    prevMouseY = e.offsetY;
+    ctx.beginPath(); // begin new path when picking up brush 
+    ctx.lineWidth = brushWidth;
+    ctx.strokeStyle = selectedColor;
+    ctx.fillStyle = selectedColor;
+    ctx.canvas.mozOpaque = true; // Add this line for Firefox compatibility
+    ctx.willReadFrequently = true; // Set willReadFrequently attribute to improve performance
+    snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 };
 
 const drawing = (e) => {
     if(!isDrawing) return;
     ctx.putImageData(snapshot, 0, 0);
-    e.preventDefault();
 
-    if (e.type === "mousemove") {
-        ctx.lineTo(e.offsetX, e.offsetY);
-    } else if (e.type === "touchmove") {
-        const touch = e.touches[0];
-        ctx.lineTo(touch.clientX - canvas.offsetLeft, touch.clientY - canvas.offsetTop);
-    }
-    ctx.stroke();
-    
     if(selectedTool === "brush" || selectedTool === "eraser") {
         ctx.strokeStyle = selectedTool === "eraser" ? "#fff" : selectedColor;
         ctx.lineTo(e.offsetX, e.offsetY);  // create line with pointer
@@ -146,12 +131,6 @@ saveImg.addEventListener("click", () => {
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", () => isDrawing = false);
-
-// touch for phones/pads
-canvas.addEventListener("touchstart", startDraw);
-canvas.addEventListener("touchmove", drawing);
-canvas.addEventListener("touchend", () => isDrawing = false);
-
 
 //lock device orientation to landscape
 if (screen.lockOrientation) {
