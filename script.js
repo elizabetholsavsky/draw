@@ -28,6 +28,8 @@ window.addEventListener("load", () => {
 });
 
 const drawRect = (e) => {
+    const { offsetX, offsetY } = getCoordinates(e);
+
     if (!fillColor.checked) {
         return ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
     }
@@ -35,6 +37,8 @@ const drawRect = (e) => {
 };
 
 const drawCircle = (e) => {
+    const { offsetX, offsetY } = getCoordinates(e);
+
     ctx.beginPath();
     // get radius fo circle using pointer (sqrt = square root, pow method returns value of 'x' to power of 'y')
     let radius = Math.sqrt(Math.pow((prevMouseX - e.offsetX), 2) + Math.pow((prevMouseY - e.offsetY), 2))
@@ -44,6 +48,8 @@ const drawCircle = (e) => {
 };
 
 const drawTriangle = (e) => {
+    const { offsetX, offsetY } = getCoordinates(e);
+
     ctx.beginPath();
     ctx.moveTo(prevMouseX, prevMouseY); // move triangle closer to pointer
     ctx.lineTo(e.offsetX, e.offsetY); // first line
@@ -54,11 +60,32 @@ const drawTriangle = (e) => {
 
 // NEW creates a straight line!
 const drawLine = (e) => {
+    const { offsetX, offsetY } = getCoordinates(e);
+
     ctx.beginPath();
     ctx.moveTo(prevMouseX, prevMouseY); // move line closer to pointer
     ctx.lineTo(e.offsetX, e.offsetY); // first line
     ctx.stroke();
 };
+
+const getCoordinates = (e) => {
+    let clientX, clientY;
+  
+    if (e.type.startsWith("touch")) {
+      const touch = e.touches[0];
+      clientX = touch.clientX;
+      clientY = touch.clientY;
+    } else {
+      clientX = e.clientX;
+      clientY = e.clientY;
+    }
+  
+    const rect = canvas.getBoundingClientRect();
+    const offsetX = clientX - rect.left;
+    const offsetY = clientY - rect.top;
+  
+    return { offsetX, offsetY };
+  };
 
 const startDraw = (e) => {
     isDrawing = true;
@@ -150,7 +177,12 @@ canvas.addEventListener("mouseup", () => isDrawing = false);
 // touch for phones/pads
 canvas.addEventListener("touchstart", startDraw);
 canvas.addEventListener("touchmove", drawing);
-canvas.addEventListener("touchend", () => isDrawing = false);
+canvas.addEventListener("touchend", () => (isDrawing = false));
+
+// Disable touchmove event to prevent scrolling
+document.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+}, { passive: false });
 
 
 //lock device orientation to landscape
