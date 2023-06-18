@@ -13,18 +13,24 @@
 
 ## Table of Contents
 
+* [Contributing](#contributing)
+* [Objectives](#objectives)
+* [Learning Outcomes](#learning-outcomes)
 * [Usage](#usage)
 * [License](#license)
-* [Contributing](#contributing)
 * [Questions](#questions)
+
+## Contributing
+[Drawing App in JavaScript video](https://www.youtube.com/watch?v=y84tBZo8GFo) by [Coding Nepal](https://github.com/codingnepal)
+
+## Objectives
+
+## Learning Outcomes
 
 ## Usage
 
 ## License
 [MIT License](https://opensource.org/licenses/MIT)
-
-## Contributing
-[Drawing App in JavaScript video](https://www.youtube.com/watch?v=y84tBZo8GFo) by [Coding Nepal](https://github.com/codingnepal)
 
 ## Questions
 * Github [elizabetholsavsky](https://github.com/elizabetholsavsky)
