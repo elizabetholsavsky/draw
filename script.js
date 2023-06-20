@@ -131,12 +131,3 @@ saveImg.addEventListener("click", () => {
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", () => isDrawing = false);
-
-//lock device orientation to landscape
-if (screen.lockOrientation) {
-    screen.lockOrientation('landscape');
-} else if (screen.mozLockOrientation) {
-    screen.mozLockOrientation('landscape');
-} else if (screen.msLockOrientation) {
-    screen.msLockOrientation('landscape');
-}
