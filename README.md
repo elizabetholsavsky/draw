@@ -43,10 +43,10 @@ I also learned that the origin of the coordinate grid used for canvas is in the 
 
 There are lots of ways I could take this project to the next level. Some ideas I'd consider for future development include adding a 'create text' button, make the application usable on touch devices by using touch events in addition to mouse events, and 'undo' functionallity by storing drawing history into an array and popping off the last action. 
 
-I am in awe of the [Classic MS Paint clone](https://github.com/1j01/jspaint) ((www.jspaint.app)[https://jspaint.app]) created by [1j01](https://github.com/1j01). The possibilities are endless!
+I am in awe of the [Classic MS Paint clone](https://github.com/1j01/jspaint) ([www.jspaint.app](https://jspaint.app)) created by [1j01](https://github.com/1j01). The possibilities are endless!
   
 ## Usage
-Visit [https://elizabetholsavsky.github.io/drawma/](https://elizabetholsavsky.github.io/drawma/) to begin your masterpiece. Choose a color from the palette or use the color picker (white paint pot). Use a shape tool or brush to begin drawing. Note that the line width can be adjusted using the slider. Toggle 'Fill' to draw solid shapes in the color of your choice. If you make a mistake, use the 'Eraser' tool which is also available in a range of sizes using the slider. If you would like to save your image, click the 'Save' button to save your artwork as a `.jpeg` file, or click the 'Clear' button to start over again. Remember, every masterpiece begins with a single stroke...
+Visit [https://elizabetholsavsky.github.io/drawma/](https://elizabetholsavsky.github.io/drawma/) to begin drawing. Choose a color from the palette or use the color picker (white paint pot). Use a shape tool or brush to begin drawing. Note that the line width can be adjusted using the slider. Toggle 'Fill' to draw solid shapes in the color of your choice. If you make a mistake, use the 'Eraser' tool which is also available in a range of sizes using the slider. If you would like to save your image, click the 'Save' button to save your artwork as a `.jpeg` file or click the 'Clear' button to start over again. Remember, every masterpiece begins with a single stroke...
 
 ## License
 [MIT License](https://opensource.org/licenses/MIT)
