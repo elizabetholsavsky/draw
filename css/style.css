@@ -79,8 +79,9 @@ section {
 }
 
 .toggle :where(span, label) {
-    color: grey;
-    padding-left: 10px;
+    color: var(--dark-gray);
+    align-items: flex-start;
+
 }
 
 .tool-choice:hover {
