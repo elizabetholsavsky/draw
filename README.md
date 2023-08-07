@@ -24,7 +24,7 @@
 * [Learning Outcomes](#learning-outcomes)
 * [Usage](#usage)
 * [License](#license)
-* [Questions](#questions)
+* [Contact](#contact)
 
 ## Contributing
 [Drawing App in JavaScript video](https://www.youtube.com/watch?v=y84tBZo8GFo) by [Coding Nepal](https://github.com/codingnepal)
@@ -53,7 +53,7 @@ Visit [https://elizabetholsavsky.github.io/drawma/](https://elizabetholsavsky.gi
 ## License
 [MIT License](https://opensource.org/licenses/MIT)
 
-## Questions
+## Contact
 * Email elizabetholsavsky@gmail.com
 * LinkedIn [https://www.linkedin.com/in/elizabetholsavsky/](https://www.linkedin.com/in/elizabetholsavsky/)
 * Portfolio [https://elizabetholsavsky.com/](https://elizabetholsavsky.com/)
