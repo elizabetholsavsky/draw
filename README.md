@@ -15,6 +15,8 @@
 
 [*Drawma*](https://elizabetholsavsky.github.io/drawma/) is a simple drawing website built alongside the [Coding Nepal](https://github.com/codingnepal) tutorial. The website utilizes the HTML canvas element to allow users to draw outline shapes, filled shapes, straight lines, and various brush and eraser sizes in the user's colors of choice. Drawings can be saved to the user's personal device.
 
+![drawma](https://github.com/elizabetholsavsky/drawma/assets/116515976/740dbe2a-4019-41c3-b652-f48699914510)
+
 ## Table of Contents
 
 * [Contributing](#contributing)
