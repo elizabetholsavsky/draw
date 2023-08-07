@@ -54,5 +54,8 @@ Visit [https://elizabetholsavsky.github.io/drawma/](https://elizabetholsavsky.gi
 [MIT License](https://opensource.org/licenses/MIT)
 
 ## Questions
-* Github [elizabetholsavsky](https://github.com/elizabetholsavsky)
 * Email elizabetholsavsky@gmail.com
+* LinkedIn [https://www.linkedin.com/in/elizabetholsavsky/](https://www.linkedin.com/in/elizabetholsavsky/)
+* Portfolio [https://elizabetholsavsky.com/](https://elizabetholsavsky.com/)
+* Hashnode [https://elizabetholsavsky.hashnode.dev/](https://elizabetholsavsky.hashnode.dev/)
+* Twitter [@elizavsky](https://twitter.com/home)
