@@ -1,6 +1,6 @@
 <div align="center"> 
   
-  [![drawma-50](https://github.com/elizabetholsavsky/drawma/assets/116515976/b5c49b4e-011c-4d86-899a-073247922437)](https://elizabetholsavsky.github.io/drawma/)
+  [![drawma-50](https://github.com/elizabetholsavsky/drawma/assets/116515976/b5c49b4e-011c-4d86-899a-073247922437)](https://elizabetholsavsky.github.io/drawma/)]
 
   [https://elizabetholsavsky.github.io/drawma/](https://elizabetholsavsky.github.io/drawma/)
 
